@@ -18,12 +18,36 @@ A API ficará disponível em: http://localhost:8080
 
 💡 Nota: Nome e preço são obrigatórios para criar ou atualizar um jogo.
 
-🔹 Método	🔹 Rota	🔹 O que faz	🔹 Status Codes
-GET	/jogos	Lista todos os jogos	✅ 200 OK
-GET	/jogos/{id}	Mostra os detalhes de um jogo	✅ 200 OK / ⚠️ 404 Not Found
-POST	/jogos	Adiciona um novo jogo	✅ 201 Created / ⚠️ 400 Bad Request
-PUT	/jogos/{id}	Atualiza um jogo existente	✅ 200 OK / ⚠️ 400 / ⚠️ 404
-DELETE	/jogos/{id}	Remove um jogo do sistema	✅ 200 OK / ⚠️ 404
+GET /jogos → Lista todos os jogos
+
+✅ Retorna 200 OK
+
+GET /jogos/{id} → Mostra os detalhes de um jogo
+
+✅ Retorna 200 OK
+
+⚠️ Retorna 404 Not Found se o jogo não existir
+
+POST /jogos → Adiciona um novo jogo
+
+✅ Retorna 201 Created
+
+⚠️ Retorna 400 Bad Request se nome ou preço não forem preenchidos
+
+PUT /jogos/{id} → Atualiza um jogo existente
+
+✅ Retorna 200 OK
+
+⚠️ Retorna 400 Bad Request se os dados forem inválidos
+
+⚠️ Retorna 404 Not Found se o jogo não existir
+
+DELETE /jogos/{id} → Remove um jogo do sistema
+
+✅ Retorna 200 OK
+
+⚠️ Retorna 404 Not Found se o jogo não existir
+
 💻 Exemplos de uso
 1️⃣ Listar todos os jogos
 
@@ -59,9 +83,6 @@ Exemplo de resposta:
   "preco": 299.99
 }
 
-
-⚠️ Retorna 404 Not Found se o jogo não existir.
-
 3️⃣ Adicionar um jogo
 
 POST /jogos
@@ -73,10 +94,6 @@ Exemplo de requisição:
   "descricao": "Jogo de construção em blocos",
   "preco": 120.00
 }
-
-
-✅ Retorna 201 Created se adicionado com sucesso.
-⚠️ Retorna 400 Bad Request se nome ou preço não forem preenchidos.
 
 4️⃣ Atualizar um jogo
 
@@ -90,17 +107,9 @@ Exemplo de requisição:
   "preco": 150.00
 }
 
-
-✅ Retorna 200 OK se atualizado com sucesso.
-⚠️ Retorna 400 Bad Request se dados forem inválidos.
-⚠️ Retorna 404 Not Found se o jogo não existir.
-
 5️⃣ Remover um jogo
 
 DELETE /jogos/1
-
-✅ Retorna 200 OK se removido com sucesso.
-⚠️ Retorna 404 Not Found se o jogo não existir.
 
 ⚠️ Observações importantes
 
