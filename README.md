@@ -12,15 +12,18 @@ Execute o projeto.
 
 A API ficará disponível em: http://localhost:8080
 
-✅ Assim você consegue testar todas as rotas.
+✅ Assim você consegue testar todas as rotas rapidamente.
 
 📋 Rotas da API
 🔹 Método	🔹 Rota	🔹 O que faz	🔹 Status Codes
-GET	/jogos	Lista todos os jogos	200 OK
-GET	/jogos/{id}	Mostra os detalhes de um jogo	200 OK / 404 Not Found
-POST	/jogos	Adiciona um novo jogo	201 Created / 400 Bad Request
-PUT	/jogos/{id}	Atualiza um jogo existente	200 OK / 400 / 404
-DELETE	/jogos/{id}	Remove um jogo do sistema	200 OK / 404
+GET	/jogos	Lista todos os jogos	✅ 200 OK
+GET	/jogos/{id}	Mostra os detalhes de um jogo	✅ 200 OK / ⚠️ 404 Not Found
+POST	/jogos	Adiciona um novo jogo	✅ 201 Created / ⚠️ 400 Bad Request
+PUT	/jogos/{id}	Atualiza um jogo existente	✅ 200 OK / ⚠️ 400 / ⚠️ 404
+DELETE	/jogos/{id}	Remove um jogo do sistema	✅ 200 OK / ⚠️ 404
+
+💡 Nota: Nome e preço são obrigatórios para criar ou atualizar um jogo.
+
 💻 Exemplos de uso
 1️⃣ Listar todos os jogos
 
@@ -57,7 +60,7 @@ Exemplo de resposta:
 }
 
 
-Retorna 404 Not Found se o jogo não existir.
+⚠️ Retorna 404 Not Found se o jogo não existir.
 
 3️⃣ Adicionar um jogo
 
@@ -72,8 +75,8 @@ Exemplo de requisição:
 }
 
 
-Retorna 201 Created se adicionado com sucesso.
-Retorna 400 Bad Request se nome ou preço não forem preenchidos.
+✅ Retorna 201 Created se adicionado com sucesso.
+⚠️ Retorna 400 Bad Request se nome ou preço não forem preenchidos.
 
 4️⃣ Atualizar um jogo
 
@@ -88,16 +91,16 @@ Exemplo de requisição:
 }
 
 
-Retorna 200 OK se atualizado com sucesso.
-Retorna 400 Bad Request se dados forem inválidos.
-Retorna 404 Not Found se o jogo não existir.
+✅ Retorna 200 OK se atualizado com sucesso.
+⚠️ Retorna 400 Bad Request se dados forem inválidos.
+⚠️ Retorna 404 Not Found se o jogo não existir.
 
 5️⃣ Remover um jogo
 
 DELETE /jogos/1
 
-Retorna 200 OK se removido com sucesso.
-Retorna 404 Not Found se o jogo não existir.
+✅ Retorna 200 OK se removido com sucesso.
+⚠️ Retorna 404 Not Found se o jogo não existir.
 
 ⚠️ Observações importantes
 
@@ -105,7 +108,8 @@ O banco de dados é em memória (H2) → os dados somem quando a aplicação é 
 
 Nome e preço são obrigatórios ao adicionar ou atualizar jogos.
 
-Para testar as rotas, use Postman ou outro cliente HTTP.
+Use Postman
+ ou outro cliente HTTP para testar.
 
 📌 Licença
 
