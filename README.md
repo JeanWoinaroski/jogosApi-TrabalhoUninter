@@ -15,15 +15,15 @@ A API ficará disponível em: http://localhost:8080
 ✅ Assim você consegue testar todas as rotas rapidamente.
 
 📋 Rotas da API
+
+💡 Nota: Nome e preço são obrigatórios para criar ou atualizar um jogo.
+
 🔹 Método	🔹 Rota	🔹 O que faz	🔹 Status Codes
 GET	/jogos	Lista todos os jogos	✅ 200 OK
 GET	/jogos/{id}	Mostra os detalhes de um jogo	✅ 200 OK / ⚠️ 404 Not Found
 POST	/jogos	Adiciona um novo jogo	✅ 201 Created / ⚠️ 400 Bad Request
 PUT	/jogos/{id}	Atualiza um jogo existente	✅ 200 OK / ⚠️ 400 / ⚠️ 404
 DELETE	/jogos/{id}	Remove um jogo do sistema	✅ 200 OK / ⚠️ 404
-
-💡 Nota: Nome e preço são obrigatórios para criar ou atualizar um jogo.
-
 💻 Exemplos de uso
 1️⃣ Listar todos os jogos
 
@@ -109,7 +109,7 @@ O banco de dados é em memória (H2) → os dados somem quando a aplicação é 
 Nome e preço são obrigatórios ao adicionar ou atualizar jogos.
 
 Use Postman
- ou outro cliente HTTP para testar.
+ ou outro cliente HTTP para testar as rotas.
 
 📌 Licença
 
