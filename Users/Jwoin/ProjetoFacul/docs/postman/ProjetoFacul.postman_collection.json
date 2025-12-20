@@ -1,0 +1,82 @@
+{
+  "info": {
+    "name": "ProjetoFacul API",
+    "_postman_id": "b1f0e1c2-0000-4000-8000-000000000000",
+    "description": "Coleção com as principais solicitações para testar a API ProjetoFacul",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Empresas - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/v1/empresas", "host": ["{{baseUrl}}"], "path": ["api","v1","empresas"] }
+      }
+    },
+    {
+      "name": "Empresas - Criar",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Nova Empresa\",\n  \"cnpj\": \"11.222.333/0001-44\",\n  \"endereco\": \"Rua X, 123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/empresas", "host": ["{{baseUrl}}"], "path": ["api","v1","empresas"] }
+      }
+    },
+    {
+      "name": "Empresas - Atualizar",
+      "request": {
+        "method": "PUT",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"id\": 1,\n  \"nome\": \"Acme Corp Updated\",\n  \"cnpj\": \"12.345.678/0001-90\",\n  \"endereco\": \"Rua A, 123\"\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/empresas/1", "host": ["{{baseUrl}}"], "path": ["api","v1","empresas","1"] }
+      }
+    },
+    {
+      "name": "Empresas - Excluir",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/v1/empresas/1", "host": ["{{baseUrl}}"], "path": ["api","v1","empresas","1"] }
+      }
+    },
+
+    {
+      "name": "Funcionarios - Listar",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/v1/funcionarios", "host": ["{{baseUrl}}"], "path": ["api","v1","funcionarios"] }
+      }
+    },
+    {
+      "name": "Funcionarios - Criar",
+      "request": {
+        "method": "POST",
+        "header": [ { "key": "Content-Type", "value": "application/json" } ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Carlos\",\n  \"email\": \"carlos@acme.com\",\n  \"cargo\": \"QA\",\n  \"empresaId\": 1\n}"
+        },
+        "url": { "raw": "{{baseUrl}}/api/v1/funcionarios", "host": ["{{baseUrl}}"], "path": ["api","v1","funcionarios"] }
+      }
+    },
+    {
+      "name": "Funcionarios - Obter por Empresa",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{baseUrl}}/api/v1/funcionarios/empresa/1", "host": ["{{baseUrl}}"], "path": ["api","v1","funcionarios","empresa","1"] }
+      }
+    }
+  ],
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" }
+  ]
+}
